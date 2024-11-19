@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas, Susanita?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfd96;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #333;
+        }
+        .button-container {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #yes-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+        #no-btn {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+            transition: left 0.1s, top 0.1s; /* Animación para el movimiento */
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <h1>¿Me perdonas, Susanita? 🥺</h1>
+        <div class="button-container">
+            <button id="yes-btn" onclick="yesClicked()">Sí</button>
+            <button id="no-btn" onmouseover="moveNo()">No</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('no-btn');
+
+        // Función para mover ligeramente el botón "No" cuando el puntero se acerque
+        function moveNo() {
+            const randomX = Math.random() * 20 - 10; // Mueve entre -10 y 10px
+            const randomY = Math.random() * 20 - 10; // Mueve entre -10 y 10px
+
+            // Mover el botón ligeramente
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        }
+
+        // Función para cuando se hace clic en "Sí"
+        function yesClicked() {
+            document.getElementById('main-content').innerHTML = `
+                <h1 style="font-size: 4rem; color: #ff69b4;">¡Sabía que me perdonarías, te quiero mucho Meloncito! ❤️</h1>
+            `;
+        }
+    </script>
+</body>
+</html>
